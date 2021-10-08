@@ -8,7 +8,7 @@ namespace HairSalon.Models
     {
       this.Clients = new HashSet<Client>();
     }
-    public int Id {get; set;}
+    public int StylistId {get; set;}
     public string Name {get; set;}
     public string Description {get; set;}
     public virtual ICollection<Client> Clients {get; set;}
