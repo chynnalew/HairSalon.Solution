@@ -3,6 +3,7 @@ using HairSalon.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 
 namespace HairSalon.Controllers
@@ -36,9 +37,24 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
-      List<Client> clientList = _db.Clients.Where(client => client.StylistId == id).ToList();
-      ViewBag.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      return View(clientList);
+      dynamic myModel = new ExpandoObject();
+      myModel.Client = _db.Clients.Where(client => client.StylistId == id).ToList();
+      myModel.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(myModel);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      var thisStylist = _db.Clients.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Stylist thisStylist)
+    {
+      _db.Entry(thisStylist).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }

@@ -1,27 +1,28 @@
 @{
   Layout = "_Layout";
 }
-
 @using HairSalon.Models;
+@model dynamic;
 
 <div class="container">
   <div class="header">
     <h1>Eau Claire's Salon</h1>
-    <h3>@ViewBag.Stylist.Name</h3>
+    <h3>@Model.Stylist.Name</h3>
   </div>
-  <p>About @ViewBag.Stylist.Name: @ViewBag.Stylist.Description</p>
+  <p>About @Model.Stylist.Name: @Model.Stylist.Description</p>
   <h3>Clients:</h3>
-  @if(@Model.Count == 0)
+  @if(@Model.Client.Count == 0)
   {
     <p>No clients have been added for this stylist</p>
     <p>Please add a new client</p>
   }
   <ul>
-    @foreach(Client client in Model) 
+    @foreach(Client client in Model.Client) 
     {
       <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new{id = client.ClientId}) | @client.StylistId </li>
     }
   </ul>
+  <p>@Html.ActionLink("Edit Stylist", "Edit", new{id = Model.Stylist.StylistId})</p>
   <p>@Html.ActionLink("Add a Client", "Create", "Clients") </p>
   <p>@Html.ActionLink("Go Back", "Index") </p>
 </div>
