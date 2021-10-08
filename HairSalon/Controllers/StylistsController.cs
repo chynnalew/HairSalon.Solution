@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace HairSalon.Controllers
 {
-  public class StylistController : Controller
+  public class StylistsController : Controller
   {
     private readonly HairSalonContext _db;
-    public StylistController(HairSalonContext db)
+    public StylistsController(HairSalonContext db)
     {
       _db =db;
     }
@@ -20,6 +20,7 @@ namespace HairSalon.Controllers
       List<Stylist> stylistList = _db.Stylists.ToList();
       return View(stylistList); 
     }
+
     public ActionResult Create()
     {
       return View();
@@ -31,6 +32,13 @@ namespace HairSalon.Controllers
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      List<Client> clientList = _db.Clients.Where(client => client.StylistId == id).ToList();
+      ViewBag.Stylist = _db.Stylists.FirstOrDefault(stylist => stylist.Id == id);
+      return View(clientList);
     }
   }
 }
