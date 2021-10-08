@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client;
+
+<div class="container">
+  <div class="header">
+    <h1>Eau Claire's Salon</h1>
+    <h3>Client File</h3>
+  </div>
+  <h2>Name: @Html.DisplayFor(model => model.Name)</h2>
+  <h3>Current Stylist: @Html.DisplayFor(model => model.Stylist.Name)</h3>
+  <p>Notes: @Html.DisplayFor(model => model.Notes)</p>
+  <p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId}) </p>
+  <p>@Html.ActionLink("View Client List", "Index") </p>
+</div>
