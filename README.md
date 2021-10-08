@@ -67,12 +67,6 @@ This application allows the user to create and store a list of hair stylists and
     - Run the command "$ dotnet restore" to restore the project dependencies
     - Run the command "$ dotnet build" to build and compile the project
     - Run the command "$ dotnet run" to build and compile the project
-  * To run the tests:
- -Navigate to the HairSalon.Solution/HairSalon.tests folder in the command line or terminal 
-    -- Run the command "$ dotnet restore" to restore the test project dependencies
-    -- Run the command "$ dotnet build" to build and compile the test project
-  - In the terminal (navigated to the HairSalon.Solution/HairSalon.tests folder) run the command "$ dotnet test"
-
 
 ## Known Bugs
 
