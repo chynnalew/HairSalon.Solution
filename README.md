@@ -70,7 +70,7 @@ This application allows the user to create and store a list of hair stylists and
 
 ## Known Bugs
 
-* no known bugs
+* The edit functionality is not working for Stylists. The path link in HairSalon/Stylists/Details.cshtml has been commented out to ensure page functionality.
 
 ### License
 

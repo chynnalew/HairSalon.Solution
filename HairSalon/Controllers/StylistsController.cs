@@ -2,6 +2,7 @@
 using HairSalon.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
