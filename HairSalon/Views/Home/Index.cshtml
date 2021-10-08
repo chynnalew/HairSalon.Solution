@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hair Salon</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  </head>
-  <body>
-    
-  </body>
-</html>
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <div class="header">
+    <h1>Eau Claire's Salon</h1>
+    <p>Stylist and Client Organizer</p>
+  </div>
+  <h2>Welcome Back, Claire!</h2>
+  <p>@Html.ActionLink("View Current Stylists", "Index", "Stylist") </p>
+</div>

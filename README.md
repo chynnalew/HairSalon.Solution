@@ -40,7 +40,7 @@ This application allows the user to create and store a list of hair stylists and
   - dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0
   - dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
   - dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0
-* Create a file named "appsettings.json" in the BestRestaurants directory
+* Create a file named "appsettings.json" in the HairSalon directory
   - add the following code to the appsettings.json file:
   ```
   {
