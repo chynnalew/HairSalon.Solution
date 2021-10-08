@@ -36,7 +36,7 @@ This application allows the user to create and store a list of hair stylists and
 
 * Clone [this](https://github.com/chynnalew/HairSalon.Solution) repository, or download and open the Zip on your local machine
 * Open the HairSalon.Solutions folder in your preferred text editor
-* To install required packages, navigate to the terminal and type the following commands:
+* To install required packages, navigate to HairSalon.Solutions/HairSalon in the terminal and type the following commands:
   - dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0
   - dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
   - dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0
