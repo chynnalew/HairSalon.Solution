@@ -15,11 +15,16 @@
   {
     <p>No stylists logged. Please add a stylist</p>
   }
-  <ul>
-    @foreach(Stylist stylist in Model) 
-    {
-      <li>@Html.ActionLink($"{stylist.Name}", "Details", new{id = stylist.StylistId})</li>
-    }
-  </ul>
+  else
+  {
+    <ul>
+      @foreach(Stylist stylist in Model) 
+      {
+        <li>@Html.ActionLink($"{stylist.Name}", "Details", new{id = stylist.StylistId})</li>
+      }
+    </ul>
+    <p> @Html.ActionLink("Add a Client", "Create", "Clients") </p>
+  }
   <p>@Html.ActionLink("Add a Stylist", "Create") </p>
+  <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
 </div>
