@@ -20,10 +20,11 @@
     <ul>
       @foreach(Client client in Model) 
       {
-        <li>@Html.ActionLink($"{client.Name}", "Details", new{id = client.ClientId})</li>
+        <li>Client: @Html.ActionLink($"{client.Name}", "Details", new{id = client.ClientId}) | Stylist: @client.Stylist.Name</li>
       }
     </ul>
   }
   <p> @Html.ActionLink("Add a Client", "Create") </p>
-  <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
+  <p> @Html.ActionLink("Return to Stylist list", "Index", "Stylists") </p>
+  <p> @Html.ActionLink("Return Home", "Index", "Home") </p>
 </div>

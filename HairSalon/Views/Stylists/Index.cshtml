@@ -11,6 +11,7 @@
     <h3>Stylists</h3>
   </div>
   <h2>Current Hair Stylists: </h2>
+  <p>click on a stylist name to see their details and a list of their clients</p>
   @if(@Model.Count == 0)
   {
     <p>No stylists logged. Please add a stylist</p>
@@ -23,9 +24,12 @@
         <li>@Html.ActionLink($"{stylist.Name}", "Details", new{id = stylist.StylistId})</li>
       }
     </ul>
-    <p> @Html.ActionLink("Add a Client", "Create", "Clients") </p>
-    <p> @Html.ActionLink("View All Clients", "Index", "Clients") </p>
+    
   }
   <p>@Html.ActionLink("Add a Stylist", "Create") </p>
+  @if(@Model.Count != 0)
+  {
+    <p> @Html.ActionLink("View all Clients", "Index", "Clients") </p>
+  }
   <p>@Html.ActionLink("Return Home", "Index", "Home")</p>
 </div>
