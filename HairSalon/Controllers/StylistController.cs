@@ -14,11 +14,15 @@ namespace HairSalon.Controllers
     {
       _db =db;
     }
-    
+
     public ActionResult Index()
     {
       List<Stylist> stylistList = _db.Stylists.ToList();
       return View(stylistList); 
+    }
+    public ActionResult Create()
+    {
+      return View();
     }
   }
 }
